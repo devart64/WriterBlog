@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}WriterBlog{% endblock %}</title>
+    {% block stylesheet %}
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}"/>
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+</head>
+<body>
+<!-- Static navbar -->
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ path('home') }}">WriterBlog</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse-target">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="{{ path('home') }}"><i class="fa fa-home"></i> Home</a></li>
+                <li><a href="{{ path('about') }}">About</a></li>
+                {% if app.user and is_granted('ROLE_ADMIN') %}
+                    <li class="{% if adminMenu is defined %}active{% endif %}"><a href="{{ path('admin') }}"><span
+                                    class="glyphicon glyphicon-cog"></span> Administration</a></li>
+                {% endif %}
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-user"></span> Welcome, {{ app.user.username }} <b
+                                    class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ path('logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                {% else %}
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-user"></span> Not connected <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ path('login') }}"><i class="fa fa-lock"></i> Login</a></li>
+                            <li><a href="{{ path('register') }}"><i class="fa fa-user"></i> Register</a></li>
+                        </ul>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="content">{% block content %}{% endblock %}</div>
+{% block footer %}
+    <footer class="footer-static-bottom">
+        <div id="social">
+            <div class="container">
+                <div class="row centered">
+                    <div class="col-lg-2">
+                        <a href="https://dribbble.com/"><i class="fa fa-dribbble"></i></a>
+                    </div>
+                    <div class="col-lg-2">
+                        <a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a>
+                    </div>
+                    <div class="col-lg-2">
+                        <a href="https://twitter.com"><i class="fa fa-twitter"></i></a>
+                    </div>
+                    <div class="col-lg-2">
+                        <a href="https://linkedin.com"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                    <div class="col-lg-2">
+                        <a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
+                    </div>
+                    <div class="col-lg-2">
+                        <a href="https://www.tumblr.com/"><i class="fa fa-tumblr"></i></a>
+                    </div>
+                </div>
+                <! --/row -->
+            </div>
+            <! --/container -->
+        </div>
+        <! --/social -->
+        <div id="footerwrap">
+            <div class="container">
+                <div class="row centered">
+                    <div class="col-lg-4">
+                        <p><b>ECRIVAIN && PHOTOGRAPHE</b></p>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <p>Living in the amazing Paris.</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <p>forteroche@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <! --/footerwrap -->
+    </footer>
+{% endblock %}
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+{% block javascripts %}
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.js') }}"></script>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,47 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+    <div class="back">
+        <div class="container">
+            <div class="container-inner">
+                {% for flash_message in app.session.flashbag.get('notice') %}
+                    <div class="alert alert-success" role="alert">
+                        {{ flash_message }}
+                    </div>
+                {% endfor %}
+                <div class="well col-md-6 col-md-offset-3">
+                    {{ form_start(userForm) }}
+                    <fieldset>
+                        <i class="fa fa-user"></i> Register
+                        <hr>
+                        <div class="form-group">
+                            <div class="col-sm-12 col-sm-12-offset-1">
+                                {{ form_row(userForm.username, { 'attr': {'class': 'form-control'} }) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12 col-sm-12-offset-1"><br>
+                                {{ form_row(userForm.password.first, { 'attr': {'class': 'form-control'} }) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-12 col-md-12-offset-1"><br>
+                                {{ form_row(userForm.password.second, { 'attr': {'class': 'form-control'} }) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-3 col-md-12-offset-1" style="margin-top:5px;"><br>
+                                <button class="btn btn-primary" type="submit"><i class="fa fa-btn fa-user"></i> Register
+                                </button>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <hr>
+                    <p>Already a member? <a href="{{ path('login') }}"> Login</a></p>
+                    {{ form_end(userForm) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}Error!{% endblock %}
+
+{% block content %}
+
+    <div class="error">
+        <div class="well-lg">
+            <div class="col-lg-6-offset-6">
+                <h1 class="code">{{ code }}</h1>
+                <h1>Whoops...<br>
+                    <small>{{ message }}</small>
+                </h1>
+                <br/>
+                <div class="btn-group span2 offset8">
+                    <a href="{{ path('home') }}" class="btn btn-danger">Return Homepage</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}User authentication{% endblock %}
+
+{% block content %}
+
+    <div class="back">
+        <div class="container">
+            <div class="container-inner">
+                {% if error %}
+                    <div class="alert alert-danger">
+                        {{ error.messageKey }}
+                    </div>
+                {% endif %}
+                <div class="well col-md-6 col-md-offset-3">
+                    <form action="{{ path('login_check') }}" method="post">
+                        <fieldset>
+                            <i class="fa fa-lock"></i> Connexion sécurisée
+                            <hr>
+                            <div class="form-group">
+                                <div class="col-md-12 col-md-6-offset-1">
+                                    <label for="username"> Identifiant</label>
+                                    <input type="text" id="username" name="_username" value="{{ last_username }}"
+                                           class="form-control"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12 col-md-6-offset-1"><br>
+                                    <label for="password">Mot de passe</label>
+                                    <input type="password" name="_password" class="form-control"/><br>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-3 col-md-6-offset-1"><br>
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fa fa-sign-in"></i> Connectez vous
+                                    </button>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <hr>
+                        <p>You not yet registered? <a href="{{ path('register') }}"> Register now</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

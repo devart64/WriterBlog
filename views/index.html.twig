@@ -1,0 +1,55 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <div id="headerwrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-lg-offset-3">
+                    <h4>HELLO PEOPLE, MY NAME IS</h4>
+                    <h1>JEAN FORTEROCHE</h1>
+                    <h4>ECRIVAIN & PHOTOGRAPHE</h4>
+                </div>
+            </div>
+            <! --/row -->
+        </div> <!-- /container -->
+    </div><! --/headerwrap -->
+    <div class="container">
+        <div class="row centered mt mb">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h1>Billet simple pour l'Alaska</h1>
+                <br/><h4>Jean Forteroche</h4>
+            </div>
+        </div>
+        <legend></legend>
+        <! --/row -->
+    </div><! --/container -->
+    <section id="works"></section>
+    <div class="container">
+        <div class="row centered mt ">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h4>Préface</h4>
+                <p>Pendant longtemps j'ai publié sur papier, mais je souhaite maintenant innover et j'ai donc choisit de
+                    publier mon nouveau roman en ligne. Je vous invite à suivre 'Billet simple pour l'Alaska' par
+                    épisodes sur mon super site!</p><br/><br/>
+            </div>
+            <legend></legend>
+        </div>
+        <! --/row -->
+    </div><! --/container -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 ">
+                {% for article in articles %}
+                    <article>
+                        <h2><a class="articleTitle"
+                               href="{{ path('article', { 'id': article.id }) }}">{{ article.title }}</a></h2>
+                        <p>{{ article.content }}</p>
+                    </article>
+                {% endfor %}
+            </div>
+        </div>
+        <! --/row -->
+    </div> <!-- /container -->
+{% endblock %}

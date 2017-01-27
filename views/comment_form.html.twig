@@ -1,0 +1,42 @@
+{% extends 'layout.html.twig' %}
+{% set adminMenu = true %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="back">
+        <div class="container">
+            <div class="container-inner">
+                <div class="well span9 offset1">
+                    <h2 class="text-center">{{ block('title') }}</h2>
+                    {% for flashMessage in app.session.flashbag.get('success') %}
+                        <div class="alert alert-success">
+                            {{ flashMessage }}
+                        </div>
+                    {% endfor %}
+                    <hr>
+                    <br/>
+                    {{ form_start(commentForm, { 'attr': {'class': 'form-horizontal'} }) }}
+                    <div class="form-group">
+                        {{ form_label(commentForm.content, null, { 'label_attr':  {
+                            'class': 'col-sm-2 control-label'
+                        }}) }}
+                        <div class="col-sm-9">
+                            {{ form_errors(commentForm.content) }}
+                            {{ form_widget(commentForm.content, { 'attr':  {
+                                'class': 'form-control',
+                                'rows': '4'
+                            }}) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-1 col-sm-3">
+                            <input type="submit" class="btn btn-primary" value="Save"/>
+                        </div>
+                    </div>
+                    {{ form_end(commentForm) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
