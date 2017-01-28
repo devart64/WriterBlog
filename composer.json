@@ -6,11 +6,7 @@
   "autoload": {
     "psr-4": {
       "WriterBlog\\": "src/"
-    },
-    "classmap": [
-      "app/AppKernel.php",
-      "app/AppCache.php"
-    ]
+    }
   },
   "autoload-dev": {
     "psr-4": {
