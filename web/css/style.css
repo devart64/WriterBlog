@@ -1,0 +1,281 @@
+/*
+ * Author: Stephen
+ *
+ * Project Name: WriterBlog
+ * Version: 1.0
+ * Date: 16-02-2017
+ * URL: 
+ */
+/* ==========================================================================
+   Base Styles, Bootstrap Modifications & Fonts Import
+   ========================================================================== */
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+::-moz-selection {
+    background: #f2c2c9;
+    color: #a4003a;
+    text-shadow: none;
+}
+
+::selection {
+    background: #16a085;
+    color: #a4003a;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.centered {
+    text-align: center
+}
+
+.mt {
+    margin-top: 80px;
+}
+
+.mb {
+    margin-bottom: 80px;
+}
+
+/* ==========================================================================
+   General styles
+   ========================================================================== */
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+}
+
+h1 {
+
+    color: #4a4a4a;
+}
+
+@media screen and (max-width: 790px) {
+    h1 {
+        font-size: 3em !important;
+    }
+}
+
+.navbar-brand {
+    font-weight: 700;
+}
+
+.navbar-default .navbar-brand {
+    color: #1abc9c;
+}
+
+.navbar-default {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: #1abc9c;
+    background-color: transparent;
+    border-bottom: 2px solid #1abc9c
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #1abc9c;
+}
+
+.error {
+    background: url(../img/error.jpg) no-repeat center;
+    padding-bottom: 125px;
+    margin-top: -450px;
+    text-align: center;
+}
+
+/* ==========================================================================
+   Wrap Sections
+   ========================================================================== */
+
+#content {
+    background-color: #C5C4C4;
+}
+
+#headerwrap {
+    background: url(../img/back.jpg) no-repeat center top;
+    margin-top: 50px;
+    padding-top: 250px;
+    text-align: center;
+    min-height: 650px;
+    width: 100%;
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#headerwrap h1 {
+    color: #ffffff;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    letter-spacing: 4px;
+    font-size: 80px;
+    font-weight: bold;
+}
+
+#headerwrap h4 {
+    font-weight: 400;
+    color: #ffffff
+}
+
+#social {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #f2f2f2;
+}
+
+#social i {
+    font-size: 40px;
+    color: #4a4a4a
+}
+
+#social i:hover {
+    color: #1abc9c
+}
+
+#footerwrap {
+    padding-top: 70px;
+    padding-bottom: 50px;
+    background-color: #2f2f2f;
+}
+
+#footerwrap p {
+    color: #f2f2f2;
+    margin-left: 10px;
+}
+
+#workwrap {
+    background: url(../img/work.jpg) no-repeat center top;
+    margin-top: -40px;
+    padding-top: 250px;
+    text-align: center;
+    background-attachment: relative;
+    background-position: center center;
+    min-height: 650px;
+    width: 100%;
+
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#workwrap h1 {
+    color: #ffffff;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    letter-spacing: 4px;
+    font-size: 80px;
+    font-weight: bold;
+}
+
+#workwrap h4 {
+    font-weight: 400;
+    color: #ffffff
+}
+
+#aboutwrap {
+    background: url(../img/about.jpg) no-repeat;
+    margin-top: -200px;
+    text-align: center;
+    min-height: 850px;
+    width: 100%;
+
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.back {
+    background: url(../img/criss.png) repeat;
+
+}
+
+.back-admin {
+    background: url(../img/back-admin.jpg) repeat;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.well {
+    margin-top: 150px;
+    margin-bottom: 100px;
+    border: 2px solid lightslategray;
+}
+
+.well-lg {
+    margin-bottom: -100px;
+}
+
+.mesError {
+    padding-top: 650px;
+}
+
+.mesError h1 {
+    color: #ac2925;
+    font-size: 4em;
+}
+
+.mesError h1 small {
+    color: whitesmoke;
+}
+
+.code {
+    color: #ac2925;
+
+}
+
+h1.code {
+    color: #ac2925;
+    font-size: 8em;
+}
+
+/* Gallery */
+.gallery {
+    padding-top: 100px;
+    padding-bottom: 120px;
+    padding-left: 20px;
+}
+
+.gallery h2, .gallery h3 {
+    color: #2b669a;
+}
+
+.gallery .form-group {
+    margin-right: 50%;
+}
